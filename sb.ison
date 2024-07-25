@@ -101,11 +101,11 @@
         "vless-cc",
         "vmess-cc",
         "hy2-cc",
-        "tuic5-cc"
+        "tuic5-cc",
         "vless-or",
         "vmess-or",
         "hy2-or",
-        "tuic5-or"
+        "tuic5-or",
         "vless-rn",
         "vmess-rn",
         "hy2-rn",
@@ -342,9 +342,9 @@
     },
     "congestion_control": "bbr",
     "zero_rtt_handshake": true
-  }
+  },
 
-        },
+        
     {
       "tag": "direct",
       "type": "direct"
@@ -361,18 +361,18 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-"vless-cc",
-"vmess-cc",
-"hy2-cc",
-"tuic5-cc"
-"vless-or",
-"vmess-or",
-"hy2-or",
-"tuic5-or"
-"vless-rn",
-"vmess-rn",
-"hy2-rn",
-"tuic5-rn"
+       "vless-cc",
+       "vmess-cc",
+       "hy2-cc",
+       "tuic5-cc",
+       "vless-or",
+       "vmess-or",
+       "hy2-or",
+       "tuic5-or",
+       "vless-rn",
+       "vmess-rn",
+       "hy2-rn",
+       "tuic5-rn"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "1m",
@@ -412,8 +412,8 @@
         "rule_set": "geosite-geolocation-!cn",
         "outbound": "select"
       }
-    ]
-  },
+    ],
+  
     "ntp": {
     "enabled": true,
     "server": "time.apple.com",
