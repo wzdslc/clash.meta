@@ -98,97 +98,252 @@
       "default": "auto",
       "outbounds": [
         "auto",
-        "vless-shun",
-        "vmess-shun",
-        "hy2-shun",
-        "tuic5-shun"
+        "vless-cc",
+        "vmess-cc",
+        "hy2-cc",
+        "tuic5-cc"
+        "vless-or",
+        "vmess-or",
+        "hy2-or",
+        "tuic5-or"
+        "vless-rn",
+        "vmess-rn",
+        "hy2-rn",
+        "tuic5-rn"
       ]
     },
     {
-      "type": "vless",
-      "tag": "vless-shun",
-      "server": "",
-      "server_port": 34888,
-      "uuid": "3676b605-81dd-4470-920a-25627ab7c213",
-      "packet_encoding": "xudp",
-      "flow": "xtls-rprx-vision",
-      "tls": {
+    "tag": "vless-rn",
+    "type": "vless",
+    "server": "192.3.231.178",
+    "server_port": 38720,
+    "uuid": "9014a875-c68e-4ef2-a081-39a328973988",
+    "tls": {
+      "enabled": true,
+      "server_name": "www.yahoo.com",
+      "insecure": false,
+      "utls": {
         "enabled": true,
-        "server_name": "www.yahoo.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
+        "fingerprint": "chrome"
+      },
       "reality": {
-          "enabled": true,
-          "public_key": "cJ-S0lwqLfsMqPC6j06c4s6fhpHfrpDaTtBV4cAWS18",
-          "short_id": "7a74c93c"
-        }
+        "enabled": true,
+        "public_key": "GIAK8O-CHYRXESQMZeMs2_ZblihS8ziKM0shqKogv08",
+        "short_id": "473f11d3"
       }
     },
-{
-            "server": "cc.lshungo.xyz",
-            "server_port": 2053,
-            "tag": "vmess-shun",
-            "tls": {
-                "enabled": true,
-                "server_name": "cc.lshungo.xyz",
-                "insecure": false,
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "packet_encoding": "packetaddr",
-            "transport": {
-                "headers": {
-                    "Host": [
-                        "cc.lshungo.xyz"
-                    ]
-                },
-                "path": "3676b605-81dd-4470-920a-25627ab7c213-vm",
-                "type": "ws"
-            },
-            "type": "vmess",
-            "security": "auto",
-            "uuid": "3676b605-81dd-4470-920a-25627ab7c213"
-        },
-
-    {
-        "type": "hysteria2",
-        "tag": "hy2-shun",
-        "server": "cc.lshungo.xyz",
-        "server_port": 20186,
-        "password": "3676b605-81dd-4470-920a-25627ab7c213",
-        "tls": {
-            "enabled": true,
-            "server_name": "cc.lshungo.xyz",
-            "insecure": false,
-            "alpn": [
-                "h3"
-            ]
-        }
+    "flow": "xtls-rprx-vision"
+  },
+  {
+    "tag": "vmess-rn",
+    "type": "vmess",
+    "server": "rn.lshungo.xyz",
+    "server_port": 2087,
+    "uuid": "9014a875-c68e-4ef2-a081-39a328973988",
+    "security": "auto",
+    "alter_id": 0,
+    "tls": {
+      "enabled": true,
+      "server_name": "rn.lshungo.xyz",
+      "insecure": false
     },
-        {
-            "type":"tuic",
-            "tag": "tuic5-shun",
-            "server": "cc.lshungo.xyz",
-            "server_port": 42310,
-            "uuid": "3676b605-81dd-4470-920a-25627ab7c213",
-            "password": "3676b605-81dd-4470-920a-25627ab7c213",
-            "congestion_control": "bbr",
-            "udp_relay_mode": "native",
-            "udp_over_stream": false,
-            "zero_rtt_handshake": false,
-            "heartbeat": "10s",
-            "tls":{
-                "enabled": true,
-                "server_name": "cc.lshungo.xyz",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ]
-            }
+    "transport": {
+      "type": "ws",
+      "headers": {
+        "Host": "rn.lshungo.xyz"
+      },
+      "path": "9014a875-c68e-4ef2-a081-39a328973988-vm"
+    }
+  },
+  {
+    "tag": "hysteria2-rn",
+    "type": "hysteria2",
+    "server": "rn.lshungo.xyz",
+    "server_port": 52017,
+    "password": "9014a875-c68e-4ef2-a081-39a328973988",
+    "tls": {
+      "enabled": true,
+      "server_name": "rn.lshungo.xyz",
+      "insecure": false,
+      "alpn": [
+        "h3"
+      ]
+    }
+  },
+  {
+    "tag": "tuic5-rn",
+    "type": "tuic",
+    "server": "rn.lshungo.xyz",
+    "server_port": 15828,
+    "uuid": "9014a875-c68e-4ef2-a081-39a328973988",
+    "password": "9014a875-c68e-4ef2-a081-39a328973988",
+    "tls": {
+      "enabled": true,
+      "server_name": "rn.lshungo.xyz",
+      "insecure": false,
+      "disable_sni": true,
+      "alpn": [
+        "h3"
+      ]
+    },
+    "congestion_control": "bbr",
+    "zero_rtt_handshake": true
+  },
+  {
+    "tag": "vless-or",
+    "type": "vless",
+    "server": "146.56.117.154",
+    "server_port": 50095,
+    "uuid": "53271cf7-467d-4743-b482-815f6dbaac31",
+    "tls": {
+      "enabled": true,
+      "server_name": "www.yahoo.com",
+      "insecure": false,
+      "utls": {
+        "enabled": true,
+        "fingerprint": "chrome"
+      },
+      "reality": {
+        "enabled": true,
+        "public_key": "h-bcKfQiz3gMhmFmcMtasl47nz-uYWPrLyjGoyb_9AE",
+        "short_id": "cceaee9b"
+      }
+    },
+    "flow": "xtls-rprx-vision"
+  },
+  {
+    "tag": "vmess-or",
+    "type": "vmess",
+    "server": "or.lshungo.xyz",
+    "server_port": 8443,
+    "uuid": "53271cf7-467d-4743-b482-815f6dbaac31",
+    "security": "auto",
+    "alter_id": 0,
+    "tls": {
+      "enabled": true,
+      "server_name": "or.lshungo.xyz",
+      "insecure": false
+    },
+    "transport": {
+      "type": "ws",
+      "headers": {
+        "Host": "or.lshungo.xyz"
+      },
+      "path": "53271cf7-467d-4743-b482-815f6dbaac31-vm"
+    }
+  },
+  {
+    "tag": "hysteria2-or",
+    "type": "hysteria2",
+    "server": "or.lshungo.xyz",
+    "server_port": 28193,
+    "password": "53271cf7-467d-4743-b482-815f6dbaac31",
+    "tls": {
+      "enabled": true,
+      "server_name": "or.lshungo.xyz",
+      "insecure": false,
+      "alpn": [
+        "h3"
+      ]
+    }
+  },
+  {
+    "tag": "tuic5-or",
+    "type": "tuic",
+    "server": "or.lshungo.xyz",
+    "server_port": 62327,
+    "uuid": "53271cf7-467d-4743-b482-815f6dbaac31",
+    "password": "53271cf7-467d-4743-b482-815f6dbaac31",
+    "tls": {
+      "enabled": true,
+      "server_name": "or.lshungo.xyz",
+      "insecure": false,
+      "disable_sni": true,
+      "alpn": [
+        "h3"
+      ]
+    },
+    "congestion_control": "bbr",
+    "zero_rtt_handshake": true
+  },
+  {
+    "tag": "vless-cc",
+    "type": "vless",
+    "server": "142.171.229.144",
+    "server_port": 34888,
+    "uuid": "3676b605-81dd-4470-920a-25627ab7c213",
+    "tls": {
+      "enabled": true,
+      "server_name": "www.yahoo.com",
+      "insecure": false,
+      "utls": {
+        "enabled": true,
+        "fingerprint": "chrome"
+      },
+      "reality": {
+        "enabled": true,
+        "public_key": "cJ-S0lwqLfsMqPC6j06c4s6fhpHfrpDaTtBV4cAWS18",
+        "short_id": "7a74c93c"
+      }
+    },
+    "flow": "xtls-rprx-vision"
+  },
+  {
+    "tag": "vmess-cc",
+    "type": "vmess",
+    "server": "cc.lshungo.xyz",
+    "server_port": 2053,
+    "uuid": "3676b605-81dd-4470-920a-25627ab7c213",
+    "security": "auto",
+    "alter_id": 0,
+    "tls": {
+      "enabled": true,
+      "server_name": "cc.lshungo.xyz",
+      "insecure": false
+    },
+    "transport": {
+      "type": "ws",
+      "headers": {
+        "Host": "cc.lshungo.xyz"
+      },
+      "path": "3676b605-81dd-4470-920a-25627ab7c213-vm"
+    }
+  },
+  {
+    "tag": "hysteria2-cc",
+    "type": "hysteria2",
+    "server": "cc.lshungo.xyz",
+    "server_port": 20186,
+    "password": "3676b605-81dd-4470-920a-25627ab7c213",
+    "tls": {
+      "enabled": true,
+      "server_name": "cc.lshungo.xyz",
+      "insecure": false,
+      "alpn": [
+        "h3"
+      ]
+    }
+  },
+  {
+    "tag": "tuic5-cc",
+    "type": "tuic",
+    "server": "cc.lshungo.xyz",
+    "server_port": 42310,
+    "uuid": "3676b605-81dd-4470-920a-25627ab7c213",
+    "password": "3676b605-81dd-4470-920a-25627ab7c213",
+    "tls": {
+      "enabled": true,
+      "server_name": "cc.lshungo.xyz",
+      "insecure": false,
+      "disable_sni": true,
+      "alpn": [
+        "h3"
+      ]
+    },
+    "congestion_control": "bbr",
+    "zero_rtt_handshake": true
+  }
+
         },
     {
       "tag": "direct",
@@ -206,10 +361,18 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
-        "vless-shun",
-        "vmess-shun",
-        "hy2-shun",
-        "tuic5-shun"
+"vless-cc",
+"vmess-cc",
+"hy2-cc",
+"tuic5-cc"
+"vless-or",
+"vmess-or",
+"hy2-or",
+"tuic5-or"
+"vless-rn",
+"vmess-rn",
+"hy2-rn",
+"tuic5-rn"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "1m",
@@ -217,33 +380,7 @@
       "interrupt_exist_connections": false
     }
   ],
-  "route": {
-      "rule_set": [
-            {
-                "tag": "geosite-geolocation-!cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
-                "download_detour": "select",
-                "update_interval": "1d"
-            },
-            {
-                "tag": "geosite-cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
-                "download_detour": "select",
-                "update_interval": "1d"
-            },
-            {
-                "tag": "geoip-cn",
-                "type": "remote",
-                "format": "binary",
-                "url": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
-                "download_detour": "select",
-                "update_interval": "1d"
-            }
-        ],
+ 
     "auto_detect_interface": true,
     "final": "select",
     "rules": [
